@@ -359,11 +359,7 @@
           
             <h3 id="安装hdfs"><a href="#安装hdfs" class="headerlink" title="安装hdfs"></a>安装hdfs</h3><p>1.下载 Hadoop 安装包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Apache 版本下载地址： https://archive.apache.org/dist/hadoop/common/</span><br><span class="line">CDH 版本下载地址： http://archive-primary.cloudera.com/cdh5/cdh/5/</span><br><span class="line">下 载 对 应 版 本 Hadoop ， 这 里 下 载 hadoop-2.6.0-cdh5.10.0.tar.gz 版 本 ， 并 上 传 至</span><br><span class="line">/home/hadoop/app 目录下。</span><br></pre></td></tr></table></figure></p>
 <p>2.修改配置</p>
-<p>3.分发<br>    将配置分发到各节点</p>
-<ol start="4">
-<li>创建规划的目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;mkdir -p /home/hadoop/data&quot; all</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>3.分发<br>    将配置分发到各节点<br>4.创建规划的目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;mkdir -p /home/hadoop/data&quot; all</span><br></pre></td></tr></table></figure></p>
 <h3 id="启动并测试-hdfs"><a href="#启动并测试-hdfs" class="headerlink" title="启动并测试 hdfs"></a>启动并测试 hdfs</h3><p>1.启动所有 Zookeeper 节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;/home/hadoop/app/zookeeper/bin/zkServer.sh start&quot; all</span><br></pre></td></tr></table></figure></p>
 <p>2.启动所有 journalnode 节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;/home/hadoop/app/hadoop/sbin/hadoop-daemon.sh start journalnode&quot; all</span><br></pre></td></tr></table></figure></p>
 <p>3.nn1 节点格式化 namenode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs namenode –format</span><br></pre></td></tr></table></figure></p>
@@ -671,14 +667,14 @@
           
             <h3 id="scala安装"><a href="#scala安装" class="headerlink" title="scala安装"></a>scala安装</h3><ul>
 <li>解压<br><code>tar -zxvf scala-2.11.8.tgz</code></li>
-<li>建立链接<br><code>ln -s scala-2.11.8 scala</code><h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><ul>
-<li>修改.bashrc 文件<br>这些环境变量的权限控制到用户级别,这里是针对某一个 特定的用户，如果你需要给某个用户权限使用这些环境变量，你只需要修改其个人用户主目 录下的.bashrc 文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc 修改生效</span><br><span class="line">vi ~/.bashrc</span><br><span class="line">SCALA_HOME=/home/hadoop/app/scala</span><br><span class="line">PATH=SCALA_HOME/bin:$PATH</span><br><span class="line">export SCALA_HOME</span><br></pre></td></tr></table></figure>
-</li>
+<li>建立链接<br><code>ln -s scala-2.11.8 scala</code>      </li>
 </ul>
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><ul>
+<li><p>修改.bashrc 文件<br>这些环境变量的权限控制到用户级别,这里是针对某一个 特定的用户，如果你需要给某个用户权限使用这些环境变量，你只需要修改其个人用户主目 录下的.bashrc 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc 修改生效</span><br><span class="line">vi ~/.bashrc</span><br><span class="line">SCALA_HOME=/home/hadoop/app/scala</span><br><span class="line">PATH=SCALA_HOME/bin:$PATH</span><br><span class="line">export SCALA_HOME</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li>查看scala版本<br><code>scala -version</code></li>
+<li><p>查看scala版本<br><code>scala -version</code></p>
+</li>
 </ul>
 
           

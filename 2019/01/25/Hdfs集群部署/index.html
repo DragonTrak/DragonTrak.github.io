@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="北海有魚">
 <meta property="og:description" content="安装hdfs1.下载 Hadoop 安装包1234Apache 版本下载地址： https://archive.apache.org/dist/hadoop/common/CDH 版本下载地址： http://archive-primary.cloudera.com/cdh5/cdh/5/下 载 对 应 版 本 Hadoop ， 这 里 下 载 hadoop-2.6.0-cdh5.10.0.tar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-25T09:47:55.955Z">
+<meta property="og:updated_time" content="2019-01-25T09:50:31.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hdfs集群部署">
 <meta name="twitter:description" content="安装hdfs1.下载 Hadoop 安装包1234Apache 版本下载地址： https://archive.apache.org/dist/hadoop/common/CDH 版本下载地址： http://archive-primary.cloudera.com/cdh5/cdh/5/下 载 对 应 版 本 Hadoop ， 这 里 下 载 hadoop-2.6.0-cdh5.10.0.tar">
@@ -356,11 +356,7 @@
       
         <h3 id="安装hdfs"><a href="#安装hdfs" class="headerlink" title="安装hdfs"></a>安装hdfs</h3><p>1.下载 Hadoop 安装包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Apache 版本下载地址： https://archive.apache.org/dist/hadoop/common/</span><br><span class="line">CDH 版本下载地址： http://archive-primary.cloudera.com/cdh5/cdh/5/</span><br><span class="line">下 载 对 应 版 本 Hadoop ， 这 里 下 载 hadoop-2.6.0-cdh5.10.0.tar.gz 版 本 ， 并 上 传 至</span><br><span class="line">/home/hadoop/app 目录下。</span><br></pre></td></tr></table></figure></p>
 <p>2.修改配置</p>
-<p>3.分发<br>    将配置分发到各节点</p>
-<ol start="4">
-<li>创建规划的目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;mkdir -p /home/hadoop/data&quot; all</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>3.分发<br>    将配置分发到各节点<br>4.创建规划的目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;mkdir -p /home/hadoop/data&quot; all</span><br></pre></td></tr></table></figure></p>
 <h3 id="启动并测试-hdfs"><a href="#启动并测试-hdfs" class="headerlink" title="启动并测试 hdfs"></a>启动并测试 hdfs</h3><p>1.启动所有 Zookeeper 节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;/home/hadoop/app/zookeeper/bin/zkServer.sh start&quot; all</span><br></pre></td></tr></table></figure></p>
 <p>2.启动所有 journalnode 节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runRemoteCmd.sh &quot;/home/hadoop/app/hadoop/sbin/hadoop-daemon.sh start journalnode&quot; all</span><br></pre></td></tr></table></figure></p>
 <p>3.nn1 节点格式化 namenode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs namenode –format</span><br></pre></td></tr></table></figure></p>
